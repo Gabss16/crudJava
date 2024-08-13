@@ -4,6 +4,9 @@
  */
 package vista;
 
+import controlador.ctrlVisitas;
+import modelo.Visitas;
+
 /**
  *
  * @author Estudiante
@@ -15,6 +18,16 @@ public class frmVisitas extends javax.swing.JFrame {
      */
     public frmVisitas() {
         initComponents();
+    }
+    
+    //11-hacer el init
+    
+    public static void initFrmVisitas() {
+        Visitas modelo = new Visitas();
+        frmVisitas vista = new frmVisitas();
+        ctrlVisitas controlador = new ctrlVisitas(modelo, vista);
+        
+        vista.setVisible(true);
     }
 
     /**
@@ -31,17 +44,17 @@ public class frmVisitas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jTextField8 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtEdad = new javax.swing.JTextField();
+        txtEspecialidad = new javax.swing.JTextField();
+        btnLimpiar = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
+        btmEliminar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtbPacientes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,34 +82,42 @@ public class frmVisitas extends javax.swing.JFrame {
         jLabel5.setText("Especialidad : ");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, -1, -1));
 
-        jTextField5.setBackground(new java.awt.Color(217, 218, 236));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 600, 40));
+        txtNombre.setBackground(new java.awt.Color(217, 218, 236));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 600, 40));
 
-        jTextField6.setBackground(new java.awt.Color(217, 218, 236));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 600, 40));
+        txtEdad.setBackground(new java.awt.Color(217, 218, 236));
+        jPanel1.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 600, 40));
 
-        jTextField7.setBackground(new java.awt.Color(217, 218, 236));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 600, 40));
+        txtEspecialidad.setBackground(new java.awt.Color(217, 218, 236));
+        jPanel1.add(txtEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 600, 40));
 
-        jButton1.setText("jButton1");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 330, 120, 50));
+        btnLimpiar.setBackground(new java.awt.Color(51, 51, 51));
+        btnLimpiar.setText("Limpiar");
+        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 330, 120, 50));
 
-        jButton2.setText("jButton1");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 120, 50));
+        btnAgregar.setBackground(new java.awt.Color(51, 51, 51));
+        btnAgregar.setText("Agregar");
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 120, 50));
 
-        jButton3.setText("jButton1");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 120, 50));
+        btmEliminar.setBackground(new java.awt.Color(51, 51, 51));
+        btmEliminar.setText("Eliminar");
+        jPanel1.add(btmEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 120, 50));
 
-        jButton4.setText("jButton1");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, 120, 50));
+        btnActualizar.setBackground(new java.awt.Color(51, 51, 51));
+        btnActualizar.setText("Actualizar");
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, 120, 50));
 
-        jButton5.setText("jButton5");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 430, 140, 50));
+        btnBuscar.setBackground(new java.awt.Color(102, 102, 102));
+        btnBuscar.setText("Buscar");
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 430, 140, 50));
 
-        jTextField8.setText("jTextField8");
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 800, 50));
+        txtBuscar.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 800, 50));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtbPacientes.setBackground(new java.awt.Color(0, 0, 0));
+        jtbPacientes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jtbPacientes.setForeground(new java.awt.Color(204, 204, 204));
+        jtbPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -107,7 +128,9 @@ public class frmVisitas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jtbPacientes.setSelectionBackground(new java.awt.Color(51, 51, 51));
+        jtbPacientes.setSelectionForeground(new java.awt.Color(51, 51, 51));
+        jScrollPane1.setViewportView(jtbPacientes);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 1020, 220));
 
@@ -130,6 +153,8 @@ public class frmVisitas extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    //12 agregar el metodo init
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -157,27 +182,27 @@ public class frmVisitas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmVisitas().setVisible(true);
+                initFrmVisitas();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    public javax.swing.JButton btmEliminar;
+    public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    public javax.swing.JTable jtbPacientes;
+    public javax.swing.JTextField txtBuscar;
+    public javax.swing.JTextField txtEdad;
+    public javax.swing.JTextField txtEspecialidad;
+    public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
