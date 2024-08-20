@@ -18,6 +18,10 @@ public class frmVisitas extends javax.swing.JFrame {
      */
     public frmVisitas() {
         initComponents();
+        
+        //extra final
+        
+        this.setLocationRelativeTo(this);
     }
     
     //11-hacer el init
@@ -105,6 +109,11 @@ public class frmVisitas extends javax.swing.JFrame {
 
         btnActualizar.setBackground(new java.awt.Color(51, 51, 51));
         btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, 120, 50));
 
         btnBuscar.setBackground(new java.awt.Color(102, 102, 102));
@@ -149,6 +158,10 @@ public class frmVisitas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
      * @param args the command line arguments
