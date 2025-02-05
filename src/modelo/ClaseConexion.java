@@ -15,9 +15,9 @@ public class ClaseConexion {
     
     /*paso 2- crear la clase conexion*/
     //Variables para la cadena de conexión
-    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
-    private static final String USUARIO = "system";
-    private static final String CONTRASENA = "ITR2024";
+    private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
+    private static final String USUARIO = "ASOB";
+    private static final String CONTRASENA = "asob";
     //Creación del metodo de conexión que retorna la conexión
     public static Connection getConexion() {
         try {
